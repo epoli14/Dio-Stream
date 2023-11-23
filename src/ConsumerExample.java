@@ -13,12 +13,13 @@ public class ConsumerExample {
 
         List<Integer> numeros = gerarNumerosInteiros(7);
 
-        numeros.forEach(n -> {
-            if (n % 2 == 0) {
-                System.out.println(n);
+        Consumer<Integer> ImprimindoPares = numero -> {
+            if (numero % 2 == 0){
+                System.out.println(numero);
             }
-        });
+        };
 
+        numeros.stream().forEach(ImprimindoPares);
 
     }
 
